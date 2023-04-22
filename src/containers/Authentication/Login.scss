@@ -1,0 +1,77 @@
+.login-background{
+    height: 100vh;
+    background: linear-gradient(135deg, rgb(34, 240, 240) 0%, rgb(219, 33, 188) 100%);
+    
+    .login-container{
+        width: 400px;
+        height: 100%;
+        margin: 0 auto;
+        background-color: white;
+        border-radius: 20px;
+
+        .login-content{
+            padding: 20px;
+            .login-text{
+                text-align: center;
+                font-weight: 600;
+                font-size: 40px;
+                color: rgb(219, 33, 188);
+                padding-top: 10px;
+                padding-bottom: 50px;
+            }
+
+            .login-input{
+                margin: 10px 0;
+            }
+
+            .btn-login{
+                width: 100%;
+                margin: 20px 0;
+                height: 40px;
+                border: none;
+                border-radius: 20px;
+                background: linear-gradient(135deg, rgb(34, 240, 240) 0%, rgb(219, 33, 188) 100%);
+                color: white;
+                font-size: 20px;
+            }
+
+            .forgot-password{
+                font-size: 12px;
+            }
+
+            .login-social{
+                display: flex;
+                justify-content: center;
+                margin-top: 40px;
+
+                .login-google{
+                    font-size: 40px;
+                    color: white;
+                    background-color: rgb(219, 68, 55);
+                    width: 60px;
+                    height: 60px;
+                    border-radius: 50%;
+                    display: flex;
+                    align-items: center;
+                    justify-content: center;
+                    margin: 0 5px;
+                }
+
+                .login-facebook{
+                    font-size: 40px;
+                    color: white;
+                    background-color: rgb(59, 89, 152);
+                    width: 60px;
+                    height: 60px;
+                    border-radius: 50%;
+                    display: flex;
+                    align-items: center;
+                    justify-content: center;
+                    margin: 0 5px;
+                }
+            }
+        }
+    }
+
+    
+}
