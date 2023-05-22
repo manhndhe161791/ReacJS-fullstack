@@ -3,9 +3,9 @@ import { connect } from 'react-redux';
 import { push } from "connected-react-router";
 import * as actions from "../../store/actions";
 import './Login.scss';
-import { FormattedMessage } from 'react-intl';
+//import { FormattedMessage } from 'react-intl';
 import { Fragment } from 'react';
-import { handleLogin } from '../../services/userService';
+import { handleLoginService } from '../../services/userService';
 
 class Login extends Component {
     constructor(props) {
@@ -35,7 +35,7 @@ class Login extends Component {
             errorMessage: ''
         })
         try {
-            let data = await handleLogin(this.state.username, this.state.password);
+            let data = await handleLoginService(this.state.username, this.state.password);
             if (data && data.errorCode !== 0) {
                 this.setState({
                     errorMessage: data.message

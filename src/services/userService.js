@@ -1,11 +1,15 @@
 import axios from "../axios"
 
-const handleLogin = (userEmail, userPassword) => {
+const handleLoginService = (userEmail, userPassword) => {
     return axios.post('/api/login', { email: userEmail, password: userPassword });
 }
 
-const getAllUser = (inputID) => {
+const getAllUserService = (inputID) => {
     return axios.get(`/api/get-all-user?id=${inputID}`,);
 }
 
-export { handleLogin, getAllUser }  
+const createUserService = (data) => {
+    return axios.post('/api/create-user', data)
+}
+
+export { handleLoginService, getAllUserService, createUserService }  
