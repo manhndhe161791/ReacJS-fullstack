@@ -2,8 +2,9 @@ import React, { Component } from 'react';
 //import { FormattedMessage } from 'react-intl';
 import { connect } from 'react-redux';
 import "./UserManage.scss"
-import { getAllUserService, createUserService } from '../../services/userService';
+import { getAllUserService, createUserService, deleteUserService } from '../../services/userService';
 import ModalUser from './ModalUser';
+import { emitter } from '../../utils/emitter';
 
 class UserManage extends Component {
 
@@ -49,6 +50,7 @@ class UserManage extends Component {
             else {
                 await this.getAllUser();
                 this.toggleUserModal();
+                emitter.emit('EVENT_CLEAR_MODAL_DATA', { 'id': 'your id' });
             }
         } catch (e) {
             console.log(e)
@@ -56,7 +58,20 @@ class UserManage extends Component {
 
     }
 
-
+    handleDeleteUser = async (user) => {
+        console.log('click delete', user);
+        try {
+            let response = await deleteUserService(user.id);
+            if (response && response.errorCode === 0) {
+                await this.getAllUser();
+            }
+            else {
+                alert(response.message);
+            }
+        } catch (e) {
+            console.log(e);
+        }
+    }
     /* LIFE CYCLE
         Run component
         1. Run constructor -> init state
@@ -97,8 +112,12 @@ class UserManage extends Component {
                                             <td>{item.lastName}</td>
                                             <td>{item.address}</td>
                                             <td>
-                                                <button className='btn-edit-user'><i className="fas fa-edit"></i></button>
-                                                <button className='btn-delete-user'><i className="fas fa-user-slash"></i></button>
+                                                <button className='btn-edit-user'>
+                                                    <i className="fas fa-edit"></i>
+                                                </button>
+                                                <button className='btn-delete-user' onClick={() => this.handleDeleteUser(item)}>
+                                                    <i className="fas fa-user-slash"></i>
+                                                </button>
                                             </td>
                                         </tr>
                                     )
