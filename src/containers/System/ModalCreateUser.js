@@ -4,7 +4,7 @@ import { Button, Modal, ModalHeader, ModalBody, ModalFooter } from 'reactstrap';
 import { connect } from 'react-redux';
 import { emitter } from '../../utils/emitter';
 
-class ModalUser extends Component {
+class ModalCreateUser extends Component {
     constructor(props) {
         super(props);
         this.state = {
@@ -33,7 +33,7 @@ class ModalUser extends Component {
     }
 
     toggle = () => {
-        this.props.toggleUserModal();
+        this.props.toggleCreateUserModal();
     }
 
     handleOnChangeInput = (event, id) => {
@@ -142,6 +142,6 @@ const mapDispatchToProps = dispatch => {
     };
 };
 
-export default connect(mapStateToProps, mapDispatchToProps)(ModalUser);
+export default connect(mapStateToProps, mapDispatchToProps)(ModalCreateUser);
 
 

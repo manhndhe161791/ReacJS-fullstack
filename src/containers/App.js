@@ -4,7 +4,7 @@ import { Route, Switch } from 'react-router-dom';
 import { ConnectedRouter as Router } from 'connected-react-router';
 import { history } from '../redux'
 import { ToastContainer } from 'react-toastify';
-
+import HomePage from "./HomePage/HomePage"
 
 import { userIsAuthenticated, userIsNotAuthenticated } from '../hoc/authentication';
 
@@ -43,7 +43,7 @@ class App extends Component {
             <Fragment>
                 <Router history={history}>  {/*history: save data when refresh page*/}
                     <div className="main-container">
-                        <ConfirmModal />
+                        {/* <ConfirmModal /> */}
                         {this.props.isLoggedIn && <Header />}
 
                         <span className="content-container">
@@ -51,6 +51,7 @@ class App extends Component {
                                 <Route path={path.HOME} exact component={(Home)} />
                                 <Route path={path.LOGIN} component={userIsNotAuthenticated(Login)} />
                                 <Route path={path.SYSTEM} component={userIsAuthenticated(System)} />
+                                <Route path={path.HOMEPAGE} component={HomePage} />
                             </Switch>
                         </span>
 
