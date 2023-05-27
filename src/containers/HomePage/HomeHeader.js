@@ -3,13 +3,21 @@ import { Redirect } from 'react-router-dom';
 import { connect } from 'react-redux';
 import './HomeHeader.scss'
 import { FormattedMessage } from 'react-intl';
-import VietNamFlag from '../../assets/language-icon/flag-for-flag-vietnam-svgrepo-com.svg';
+import VietnamFlag from '../../assets/language-icon/flag-for-flag-vietnam-svgrepo-com.svg';
 import UnitedStateFlag from '../../assets/language-icon/flag-us-svgrepo-com.svg';
 import JapanFlag from '../../assets/language-icon/japan-svgrepo-com.svg';
+import { LANGUAGES } from '../../utils';
+import { changeAppLanguage } from '../../store/actions';
+
 class HomeHeader extends Component {
 
+    changeLanguage = (language) => {
+        this.props.changeAppLanguageRedux(language)
+        //fire redux event: actions
+    }
+
     render() {
-        console.log('check props', this.props)
+        let language = this.props.language;
         return (
             <>
                 <div className='home-header-container'>
@@ -41,9 +49,19 @@ class HomeHeader extends Component {
                                 <i className="fas fa-question-circle"></i>
                                 <span><FormattedMessage id="home-header.support" /></span>
                             </div>
-                            <div className='language-icon'><img src={VietNamFlag} /></div>
-                            <div className='language-icon'><img src={UnitedStateFlag} /></div>
-                            <div className='language-icon'><img src={JapanFlag} /></div>
+                            <div className='language-content'>
+                                <span><FormattedMessage id="home-header.language" />:</span>
+                                <div className={language === LANGUAGES.VI ? "language-icon active" : "language-icon"}>
+                                    <img src={VietnamFlag} onClick={() => { this.changeLanguage(LANGUAGES.VI) }} />
+                                </div>
+                                <div className={language === LANGUAGES.EN ? "language-icon active" : "language-icon"}>
+                                    <img src={UnitedStateFlag} onClick={() => { this.changeLanguage(LANGUAGES.EN) }} />
+                                </div>
+                                <div className={language === LANGUAGES.JP ? "language-icon active" : "language-icon"}>
+                                    <img src={JapanFlag} onClick={() => { this.changeLanguage(LANGUAGES.JP) }} />
+                                </div>
+                            </div>
+
                         </div>
                     </div>
                 </div>
@@ -100,6 +118,7 @@ const mapStateToProps = state => {
 
 const mapDispatchToProps = dispatch => {
     return {
+        changeAppLanguageRedux: (language) => { dispatch(changeAppLanguage(language)) }
     };
 };
 

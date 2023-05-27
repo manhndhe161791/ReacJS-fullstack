@@ -43,36 +43,38 @@
             align-items: center;
 
             .support-content {
-                padding-right: 100px;
+                padding-right: 50px;
                 display: flex;
                 align-items: center;
-                cursor: pointer;
                 i {
                     font-size: 20px;
                     margin-right: 5px;
+                    cursor: pointer;
                 }
                 span {
                     font-size: 15px;
-                }
-            }
-            .language-icon {
-                padding: 0 5px;
-                img {
-                    height: 25px;
                     cursor: pointer;
                 }
             }
-            .language-icon-vi {
-                cursor: pointer;
-                &.active {
-                    color: blue;
+            .language-content {
+                display: flex;
+                align-items: center;
+                span {
+                    font-size: 15px;
                 }
-            }
-            .language-icon-en {
-                margin: 0 10px;
-            }
-            .language-icon-jp {
-                padding-right: 40px;
+                .language-icon {
+                    padding: 0 5px;
+                    img {
+                        height: 25px;
+                        width: 30px;
+                        cursor: pointer;
+                    }
+                    &.active {
+                        img {
+                            border: 2px solid #49bce2;
+                        }
+                    }
+                }
             }
         }
     }
@@ -140,7 +142,7 @@
             grid-gap: 44px;
             justify-content: center;
             .option-content {
-                width: 125px;
+                width: 140px;
 
                 .option-icon {
                     background: white;
@@ -149,7 +151,7 @@
                     padding: 10px;
                     border-radius: 50%;
                     margin: 0 auto;
-                    box-shadow: 2px 1px 1px rgba(0, 0, 0, 0.5);
+                    box-shadow: 2px 4px 10px rgba(0, 0, 0, 0.5);
                     cursor: pointer;
                     i {
                         font-size: 28px;
