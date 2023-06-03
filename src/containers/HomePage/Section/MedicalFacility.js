@@ -3,8 +3,8 @@ import React, { Component } from 'react';
 import { connect } from 'react-redux';
 import HomeHeader from './HomeHeader';
 import HomeBanner from './HomeBanner';
-import PopularSpecialty from './Section/PopularSpecialty';
-class HomePage extends Component {
+import Specialty from './Section/Specialty';
+class MedicalFacility extends Component {
 
     render() {
 
@@ -13,7 +13,7 @@ class HomePage extends Component {
                 <div>
                     <HomeHeader />
                     <HomeBanner />
-                    <PopularSpecialty />
+                    <Specialty />
                 </div>
             </>
         );
@@ -32,4 +32,4 @@ const mapDispatchToProps = dispatch => {
     };
 };
 
-export default connect(mapStateToProps, mapDispatchToProps)(HomePage);
+export default connect(mapStateToProps, mapDispatchToProps)(MedicalFacility);

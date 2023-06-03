@@ -1,5 +1,5 @@
 import React, { Component } from 'react';
-import { Redirect } from 'react-router-dom';
+//import { Redirect } from 'react-router-dom';
 import { connect } from 'react-redux';
 import './HomeHeader.scss'
 import { FormattedMessage } from 'react-intl';
@@ -65,7 +65,7 @@ class HomeHeader extends Component {
                         </div>
                     </div>
                 </div>
-                <div className='home-banner'>
+                {/* <div className='home-banner'>
                     <div className='banner-top-content'>
                         <div className='banner-title'><FormattedMessage id="home-banner.banner-title" /></div>
                         <div className='banner-suptitle'><b><FormattedMessage id="home-banner.banner-suptitle" /></b></div>
@@ -102,7 +102,7 @@ class HomeHeader extends Component {
                             </div>
                         </div>
                     </div>
-                </div >
+                </div > */}
             </>
         );
     }
