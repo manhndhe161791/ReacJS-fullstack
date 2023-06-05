@@ -1,46 +1,47 @@
 import React, { Component } from 'react';
 //import { Redirect } from 'react-router-dom';
 import { connect } from 'react-redux';
-import './MedicalFacility.scss';
 import Slider from 'react-slick';
 
-class MedicalFacility extends Component {
+
+//import hand-book from './Section/hand-book';
+class HandBook extends Component {
 
     render() {
 
         return (
             <>
-                <div className='section-general section-medical-facility'>
+                <div className='section-general section-hand-book'>
                     <div className='section-container'>
                         <div className='section-header'>
-                            <span className='header-title'>Co so y te noi bat</span>
+                            <span className='header-title'>Cam Nang</span>
                             <button className='header-btn'>XEM THEM</button>
                         </div>
                         <div className='section-body'>
                             <Slider {...this.props.settings}>
                                 <div className='body-content'>
-                                    <div className='bg-image img-medical-facility' />
-                                    <span>Phong Kham Da Khoa Meditec</span>
+                                    <div className='bg-image img-hand-book' />
+                                    <span>Cơ Xương Khớp</span>
                                 </div>
                                 <div className='body-content'>
-                                    <div className='bg-image img-medical-facility' />
-                                    <span>Phong Kham Da Khoa Meditec</span>
+                                    <div className='bg-image img-hand-book' />
+                                    <span>Cơ Xương Khớp</span>
                                 </div>
                                 <div className='body-content'>
-                                    <div className='bg-image img-medical-facility' />
-                                    <span>Phong Kham Da Khoa Meditec</span>
+                                    <div className='bg-image img-hand-book' />
+                                    <span>Cơ Xương Khớp</span>
                                 </div>
                                 <div className='body-content'>
-                                    <div className='bg-image img-medical-facility' />
-                                    <span>Phong Kham Da Khoa Meditec</span>
+                                    <div className='bg-image img-hand-book' />
+                                    <span>Cơ Xương Khớp</span>
                                 </div>
                                 <div className='body-content'>
-                                    <div className='bg-image img-medical-facility' />
-                                    <span>Phong Kham Da Khoa Meditec</span>
+                                    <div className='bg-image img-hand-book' />
+                                    <span>Cơ Xương Khớp</span>
                                 </div>
                                 <div className='body-content'>
-                                    <div className='bg-image img-medical-facility' />
-                                    <span>Phong Kham Da Khoa Meditec</span>
+                                    <div className='bg-image img-hand-book' />
+                                    <span>Cơ Xương Khớp</span>
                                 </div>
                             </Slider>
                         </div>
@@ -63,4 +64,4 @@ const mapDispatchToProps = dispatch => {
     };
 };
 
-export default connect(mapStateToProps, mapDispatchToProps)(MedicalFacility);
+export default connect(mapStateToProps, mapDispatchToProps)(HandBook);
