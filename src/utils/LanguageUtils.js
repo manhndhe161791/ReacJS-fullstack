@@ -1,6 +1,6 @@
 import messages_vi from '../translations/vi.json';
 import messages_en from '../translations/en.json';
-import messages_jp from '../translations/jp.json';
+import messages_jp from '../translations/ja.json';
 const flattenMessages = ((nestedMessages, prefix = '') => {
     if (nestedMessages == null) {
         return {}
@@ -22,7 +22,7 @@ const flattenMessages = ((nestedMessages, prefix = '') => {
 const messages = {
     'vi': flattenMessages(messages_vi),
     'en': flattenMessages(messages_en),
-    'jp': flattenMessages(messages_jp),
+    'ja': flattenMessages(messages_jp),
 };
 
 export default class LanguageUtils {

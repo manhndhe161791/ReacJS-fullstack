@@ -42,7 +42,7 @@ class HomeBanner extends Component {
                                 <div className='option-text'><FormattedMessage id="home-banner.mental-health" /></div>
                             </div>
                             <div className='option-content'>
-                                <div className='option-icon'><i class="fas fa-briefcase-medical"></i></div>
+                                <div className='option-icon'><i className="fas fa-briefcase-medical"></i></div>
                                 <div className='option-text'><FormattedMessage id="home-banner.dental-checkup" /></div>
                             </div>
                         </div>

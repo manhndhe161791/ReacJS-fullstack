@@ -9,7 +9,7 @@ export const path = {
 export const LANGUAGES = {
     VI: 'vi',
     EN: 'en',
-    JP: 'jp'
+    JA: 'ja'
 };
 
 export const manageActions = {

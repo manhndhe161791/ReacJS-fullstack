@@ -31,11 +31,13 @@ class HomePage extends Component {
                 <div>
                     <HomeHeader />
                     <HomeBanner />
+
                     <PopularSpecialty settings={settings} />
                     <MedicalFacility settings={settings} />
                     <OutstandingDoctor settings={settings} />
                     <HandBook settings={settings} />
                     <About />
+
                     <HomeFooter />
                 </div>
             </>

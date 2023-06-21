@@ -131,25 +131,6 @@
     }
 }
 
-.home-footer {
-    padding: 50px 80px 20px 80px;
-    display: flex;
-    align-items: center;
-    justify-content: space-between;
-    .media-page {
-        i {
-            font-size: 50px;
-            padding: 0 10px;
-        }
-        .fa-youtube:before {
-            color: #ff0000;
-        }
-        .fa-facebook-square:before {
-            color: #3b5998;
-        }
-    }
-}
-
 .section-about {
     height: 550px;
     padding: 0 200px;
@@ -172,6 +153,25 @@
                 text-align: justify;
                 font-size: 14px;
             }
+        }
+    }
+}
+
+.home-footer {
+    padding: 20px 80px 20px 80px;
+    display: flex;
+    align-items: center;
+    justify-content: space-between;
+    .media-page {
+        i {
+            font-size: 50px;
+            padding: 0 10px;
+        }
+        .fa-youtube:before {
+            color: #ff0000;
+        }
+        .fa-facebook-square:before {
+            color: #3b5998;
         }
     }
 }

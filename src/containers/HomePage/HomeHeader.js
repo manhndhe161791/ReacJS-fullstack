@@ -3,9 +3,11 @@ import React, { Component } from 'react';
 import { connect } from 'react-redux';
 import './HomeHeader.scss'
 import { FormattedMessage } from 'react-intl';
+//import svg file
 import VietnamFlag from '../../assets/language-icon/flag-for-flag-vietnam-svgrepo-com.svg';
 import UnitedStateFlag from '../../assets/language-icon/flag-us-svgrepo-com.svg';
 import JapanFlag from '../../assets/language-icon/japan-svgrepo-com.svg';
+//import Redux
 import { LANGUAGES } from '../../utils';
 import { changeAppLanguage } from '../../store/actions';
 
@@ -18,6 +20,7 @@ class HomeHeader extends Component {
 
     render() {
         let language = this.props.language;
+        console.log('check user info: ', this.props.userInfo)
         return (
             <>
                 <div className='home-header-container'>
@@ -57,8 +60,8 @@ class HomeHeader extends Component {
                                 <div className={language === LANGUAGES.EN ? "language-icon active" : "language-icon"}>
                                     <img src={UnitedStateFlag} onClick={() => { this.changeLanguage(LANGUAGES.EN) }} />
                                 </div>
-                                <div className={language === LANGUAGES.JP ? "language-icon active" : "language-icon"}>
-                                    <img src={JapanFlag} onClick={() => { this.changeLanguage(LANGUAGES.JP) }} />
+                                <div className={language === LANGUAGES.JA ? "language-icon active" : "language-icon"}>
+                                    <img src={JapanFlag} onClick={() => { this.changeLanguage(LANGUAGES.JA) }} />
                                 </div>
                             </div>
 
@@ -112,12 +115,14 @@ class HomeHeader extends Component {
 const mapStateToProps = state => {
     return {
         isLoggedIn: state.user.isLoggedIn,
+        userInfo: state.user.userInfo,
         language: state.app.language,
     };
 };
 
 const mapDispatchToProps = dispatch => {
     return {
+
         changeAppLanguageRedux: (language) => { dispatch(changeAppLanguage(language)) }
     };
 };
